@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Persistent Header based on design -->
+        <header id="header" class="fade-element">
+            <div class="settings-pills">
+                <div class="pill-group" id="modifier-options">
+                    <button data-mod="punctuation">@ punctuation</button>
+                    <button data-mod="numbers"># numbers</button>
+                </div>
+                <div class="pill-group" id="mode-options">
+                    <button class="active" data-mode="time">⏱ time</button>
+                    <button data-mode="words">A words</button>
+                    <button data-mode="custom">🛠 custom</button>
+                </div>
+                <div class="pill-group" id="amount-options">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="pill-group">
+                    <button class="icon-btn" id="settings-btn">⚙</button>
+                </div>
+            </div>
+            <div class="language-selector">
+                🌍 english
+            </div>
+        </header>
+
+        <!-- Main Typing Area -->
+        <main class="typing-container">
+            <div id="live-timer" class="live-timer hidden">30</div>
+            
+            <div id="words-wrapper" class="words-wrapper">
+                <div id="words" class="words">
+                    <!-- Words injected here by WordManager -->
+                </div>
+            </div>
+
+            <div class="refresh-container fade-element">
+                <button class="icon-btn" id="refresh-btn">↻</button>
+            </div>
+
+            <!-- Hidden input for capturing keystrokes -->
+            <input type="text" id="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        </main>
+
+        <!-- Results Screen (Hidden initially) -->
+        <div id="results" class="results-screen hidden">
+            <div class="results-header">
+                <div class="results-icons">
+                    <span>🕒</span>
+                    <span>⏱️</span>
+                    <span>🔥</span>
+                    <span>🔬</span>
+                </div>
+                <div class="results-refresh">
+                    <button class="icon-btn" id="results-refresh-btn">🔄</button>
+                </div>
+            </div>
+            
+            <div class="results-stats-row">
+                <div class="results-main-stats">
+                    <div class="stat-group">
+                        <div class="stat-label">WORDS PER MINUTE</div>
+                        <div class="stat-value purple-text" id="result-wpm">0 wpm</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">ACCURACY</div>
+                        <div class="stat-value purple-text" id="result-acc">0%</div>
+                    </div>
+                </div>
+                <div class="results-info">
+                    Typing Test - Time 30 - English
+                </div>
+            </div>
+
+            <div class="results-chart-container">
+                <canvas id="results-chart"></canvas>
+            </div>
+            
+            <div class="results-footer">
+                <button class="share-btn">Share</button>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Settings</h3>
+                <div class="setting-group">
+                    <label>Timer Duration</label>
+                    <div class="setting-options" id="timer-options">
+                        <button data-time="15">15s</button>
+                        <button data-time="30" class="active">30s</button>
+                        <button data-time="60">60s</button>
+                        <button data-time="120">120s</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label>Theme</label>
+                    <div class="setting-options" id="theme-options" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.5rem; max-height: 200px; overflow-y: auto; padding-right: 10px;">
+                        <button class="active" data-theme="default">default</button>
+                        <button data-theme="dark">dark slate</button>
+                        <button data-theme="purple">midnight</button>
+                        <button data-theme="matrix">matrix</button>
+                        <button data-theme="sunset">sunset</button>
+                        <button data-theme="dino">dino</button>
+                        <button data-theme="magic girl">magic girl</button>
+                        <button data-theme="milkshake">milkshake</button>
+                        <button data-theme="modern ink">modern ink</button>
+                        <button data-theme="ms cupcakes">ms cupcakes</button>
+                        <button data-theme="sewing tin light">sewing tin light</button>
+                        <button data-theme="vesper light">vesper light</button>
+                        <button data-theme="lilac mist">lilac mist</button>
+                        <button data-theme="rose pine dawn">rose pine dawn</button>
+                        <button data-theme="soaring skies">soaring skies</button>
+                    </div>
+                </div>
+                <button id="close-settings-btn" class="close-btn">Close</button>
+            </div>
+        </div>
+
+        <!-- Custom Text Modal -->
+        <div id="custom-text-modal" class="modal hidden">
+            <div class="modal-content" style="max-width: 600px;">
+                <h3>Custom Text</h3>
+                <div class="setting-group">
+                    <label>Enter your personal typing text:</label>
+                    <textarea id="custom-text-input" rows="6" style="width: 100%; padding: 0.5rem; background: var(--pill-bg); color: var(--text-active); border: 1px solid var(--text-color); border-radius: 4px; font-family: var(--font-mono); resize: vertical;"></textarea>
+                </div>
+                <button id="save-custom-btn" class="close-btn">Start</button>
+                <button id="cancel-custom-btn" class="close-btn" style="background: var(--pill-bg); margin-top: 0.5rem;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

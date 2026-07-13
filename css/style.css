@@ -1,0 +1,565 @@
+:root {
+    --bg-color: #323437; /* Monkeytype dark */
+    --text-color: #646669; /* Dimmed */
+    --text-active: #d1d0c5; /* Typed correct */
+    --text-correct: #d1d0c5;
+    --text-error: #ca4754;
+    --text-error-extra: #7e2a33;
+    --caret-color: #e2b714;
+    --active-word-bg: transparent;
+    --header-line: transparent;
+    --pill-bg: #2c2e31;
+    
+    --font-ui: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+    
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --text-color: #64748b;
+    --text-active: #f8fafc;
+    --text-correct: #94a3b8;
+    --text-error: #ef4444;
+    --text-error-extra: #7f1d1d;
+    --caret-color: #38bdf8;
+    --active-word-bg: transparent;
+    --pill-bg: #1e293b;
+}
+
+[data-theme="purple"] {
+    --bg-color: #1e1b4b;
+    --text-color: #6d28d9;
+    --text-active: #c4b5fd;
+    --text-correct: #8b5cf6;
+    --text-error: #f43f5e;
+    --text-error-extra: #9f1239;
+    --caret-color: #fbbf24;
+    --active-word-bg: transparent;
+    --pill-bg: #312e81;
+}
+
+[data-theme="matrix"] {
+    --bg-color: #000000;
+    --text-color: #064e3b;
+    --text-active: #10b981;
+    --text-correct: #059669;
+    --text-error: #dc2626;
+    --text-error-extra: #991b1b;
+    --caret-color: #10b981;
+    --active-word-bg: transparent;
+    --pill-bg: #064e3b;
+}
+
+[data-theme="sunset"] {
+    --bg-color: #431407;
+    --text-color: #9a3412;
+    --text-active: #fdba74;
+    --text-correct: #ea580c;
+    --text-error: #b91c1c;
+    --text-error-extra: #7f1d1d;
+    --caret-color: #fcd34d;
+    --active-word-bg: transparent;
+    --pill-bg: #7c2d12;
+}
+
+[data-theme="dino"] {
+    --bg-color: #f4f4f4;
+    --text-color: #7b7b7b;
+    --text-active: #2c2c2c;
+    --text-correct: #5b5b5b;
+    --text-error: #e74c3c;
+    --text-error-extra: #c0392b;
+    --caret-color: #40a02b;
+    --active-word-bg: transparent;
+    --pill-bg: #e0e0e0;
+}
+
+[data-theme="magic girl"] {
+    --bg-color: #fce4ec;
+    --text-color: #f48fb1;
+    --text-active: #00897b;
+    --text-correct: #26a69a;
+    --text-error: #f44336;
+    --text-error-extra: #d32f2f;
+    --caret-color: #e91e63;
+    --active-word-bg: transparent;
+    --pill-bg: #f8bbd0;
+}
+
+[data-theme="milkshake"] {
+    --bg-color: #f4f0eb;
+    --text-color: #8c7a6b;
+    --text-active: #e37e96;
+    --text-correct: #cca499;
+    --text-error: #c0392b;
+    --text-error-extra: #922b21;
+    --caret-color: #e37e96;
+    --active-word-bg: transparent;
+    --pill-bg: #e6ded5;
+}
+
+[data-theme="modern ink"] {
+    --bg-color: #ffffff;
+    --text-color: #b3b3b3;
+    --text-active: #000000;
+    --text-correct: #333333;
+    --text-error: #d94a4a;
+    --text-error-extra: #b32d2d;
+    --caret-color: #d94a4a;
+    --active-word-bg: transparent;
+    --pill-bg: #f0f0f0;
+}
+
+[data-theme="ms cupcakes"] {
+    --bg-color: #ffffff;
+    --text-color: #d2b4de;
+    --text-active: #8e44ad;
+    --text-correct: #af7ac5;
+    --text-error: #c0392b;
+    --text-error-extra: #922b21;
+    --caret-color: #1abc9c;
+    --active-word-bg: transparent;
+    --pill-bg: #f5eef8;
+}
+
+[data-theme="sewing tin light"] {
+    --bg-color: #e0e6ed;
+    --text-color: #8a9ba8;
+    --text-active: #293742;
+    --text-correct: #394b59;
+    --text-error: #e74c3c;
+    --text-error-extra: #c0392b;
+    --caret-color: #5c7080;
+    --active-word-bg: transparent;
+    --pill-bg: #ced9e0;
+}
+
+[data-theme="vesper light"] {
+    --bg-color: #fdf6e3;
+    --text-color: #93a1a1;
+    --text-active: #cb4b16;
+    --text-correct: #b58900;
+    --text-error: #dc322f;
+    --text-error-extra: #c0392b;
+    --caret-color: #d33682;
+    --active-word-bg: transparent;
+    --pill-bg: #eee8d5;
+}
+
+[data-theme="lilac mist"] {
+    --bg-color: #e8e6f1;
+    --text-color: #9a95b8;
+    --text-active: #4a4569;
+    --text-correct: #6b668a;
+    --text-error: #e74c3c;
+    --text-error-extra: #c0392b;
+    --caret-color: #9b59b6;
+    --active-word-bg: transparent;
+    --pill-bg: #d6d3e3;
+}
+
+[data-theme="rose pine dawn"] {
+    --bg-color: #faf4ed;
+    --text-color: #9893a5;
+    --text-active: #575279;
+    --text-correct: #797593;
+    --text-error: #b4637a;
+    --text-error-extra: #d7827e;
+    --caret-color: #d7827e;
+    --active-word-bg: transparent;
+    --pill-bg: #f2e9e1;
+}
+
+[data-theme="soaring skies"] {
+    --bg-color: #e6f7ff;
+    --text-color: #91d5ff;
+    --text-active: #0050b3;
+    --text-correct: #1890ff;
+    --text-error: #f5222d;
+    --text-error-extra: #cf1322;
+    --caret-color: #096dd9;
+    --active-word-bg: transparent;
+    --pill-bg: #bae7ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fade-element {
+    transition: opacity var(--transition-speed) ease-in-out;
+    opacity: 1;
+}
+
+.app-container.typing-active .fade-element {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Header & Settings Pills --- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+}
+
+.settings-pills {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--pill-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.pill-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.pill-group button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.pill-group button:hover, .pill-group button.active {
+    color: var(--caret-color);
+}
+
+.language-selector {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* --- Main Typing Area --- */
+.typing-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.live-timer {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--caret-color);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono);
+    position: absolute;
+    top: -2rem;
+    left: 0;
+}
+
+.live-timer.hidden {
+    opacity: 0;
+}
+
+.words-wrapper {
+    height: 120px; /* Roughly 3 lines depending on font size */
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+.words {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0.5em 0.8em;
+    width: 100%;
+    transition: transform 0.2s ease-out;
+}
+
+/* Word & Letter styling */
+.word {
+    display: flex;
+    border-bottom: 2px solid transparent;
+    padding: 0;
+    border-radius: 4px;
+    transition: background-color 0.1s;
+}
+
+.word.error {
+    border-bottom-color: var(--text-error);
+}
+
+.letter {
+    color: var(--text-color);
+    position: relative;
+}
+
+.letter.correct {
+    color: var(--text-correct);
+}
+
+.letter.incorrect {
+    color: var(--text-error);
+}
+
+.letter.extra {
+    color: var(--text-error-extra);
+}
+
+/* Caret */
+.caret {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 1.2em;
+    background-color: var(--caret-color);
+    transition: left 0.05s ease-out, top 0.05s ease-out;
+    animation: blink 1s infinite;
+}
+
+.app-container.typing-active .caret {
+    animation: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.refresh-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: var(--text-active);
+}
+
+/* Hidden input to capture keys naturally */
+#hidden-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+/* --- Results Screen --- */
+.results-screen {
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    padding: 2rem;
+    font-family: var(--font-ui);
+}
+
+.results-screen.hidden {
+    display: none !important;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--header-line);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.results-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-active);
+}
+
+.results-stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.results-main-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.stat-value.purple-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--caret-color);
+    line-height: 1;
+}
+
+.results-info {
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.results-chart-container {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    min-height: 250px;
+}
+
+.results-footer {
+    margin-top: 2rem;
+}
+
+.share-btn {
+    background-color: var(--caret-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+}
+
+/* --- Settings Modal --- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    backdrop-filter: blur(2px);
+}
+
+.modal.hidden {
+    display: none !important;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--header-line);
+    min-width: 400px;
+    font-family: var(--font-ui);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-active);
+}
+
+.setting-group {
+    margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.setting-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.setting-options button {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    transition: all 0.2s;
+}
+
+.setting-options button.active, .setting-options button:hover {
+    background: var(--text-active);
+    color: var(--bg-color);
+    border-color: var(--text-active);
+}
+
+.close-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--text-active);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-family: var(--font-ui);
+}
