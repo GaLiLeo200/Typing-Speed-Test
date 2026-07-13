@@ -1,0 +1,8 @@
+*.pdf
+*.docx
+*.zip
+*.class
+node_modules/
+.DS_Store
+.vscode/
+Thumbs.db
